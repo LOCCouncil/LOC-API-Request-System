@@ -1,0 +1,16 @@
+{
+  "name": "loc-api-request",
+  "version": "0.1.0",
+  "description": "This is a Discord bot written in Eris for making API requests to the Library of Code SAS API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "eris": "^0.9.0",
+    "eslint": "^5.9.0"
+  }
+}
