@@ -5,7 +5,7 @@ const client = require('../client');
 module.exports = {
   name: 'gettoken',
   action: async (msg) => {
-    //msg.delete();
+    msg.delete();
     const prevMessage = await msg.channel.createMessage('Generating token...');
     const res = await axios({
       method: 'get',
@@ -28,5 +28,6 @@ module.exports = {
   },
   options: {
     'description': 'Fetches your token from the API.',
+    'usage': '<username> <password>'
   }
 };   
