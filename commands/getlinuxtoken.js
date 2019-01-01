@@ -15,7 +15,7 @@ module.exports = {
             }
           });
     } catch (err) {
-        return msg.channel.createMessage(error);
+        return msg.channel.createMessage(err);
     }
     const res = await axios({
       method: 'put',
