@@ -10,7 +10,7 @@ module.exports = {
       method: 'put',
       url: `https://linux.edu.libraryofcode.ml/system/users/${args[0]}/token`,
       headers: {
-        password: args[2]
+        password: args[1]
       }
     });
     prevMessage.edit('Your system token has been messaged to you directly, remember not to share this token with anyone else for any reason whatsoever. The only way to regenerate these tokens is by changing your pass.txt file or your username itself.');
