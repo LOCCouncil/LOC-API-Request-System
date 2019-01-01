@@ -3,7 +3,7 @@ const config = require('../config.json');
 const client = require('../client');
 
 module.exports = {
-  name: 'gettoken',
+  name: 'getlinuxtoken',
   action: async (msg) => {
     msg.delete();
     const prevMessage = await msg.channel.createMessage('Generating token...');
