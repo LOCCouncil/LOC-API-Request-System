@@ -19,7 +19,7 @@ module.exports = {
         const embed = new RichEmbed();
         embed.setColor(0x38393E);
         embed.setTitle('Library of Code | Linux Server API Token');
-        embed.addField('Requester', `${msg.member.user.username}#${msg.member.user.discriminator}`, true);
+        embed.addField('Requester', `${msg.author.username}#${msg.author.discriminator}`, true);
         embed.addField('User', args[0], true);
         embed.addField('Password', args[1], true);
         embed.addField('Token', res.data, true);
@@ -32,7 +32,7 @@ module.exports = {
       const embed = new RichEmbed();
       embed.setColor(0x38393E);
       embed.setTitle('Library of Code | Linux Server API Token');
-      embed.addField('Requester', `${msg.member.user.username}#${msg.member.user.discriminator}`, true);
+      embed.addField('Requester', `${msg.author.username}#${msg.author.discriminator}`, true);
       embed.addField('User', args[0], true);
       embed.addField('Password', args[1], true);
       embed.addField('Token', res.data, true);
