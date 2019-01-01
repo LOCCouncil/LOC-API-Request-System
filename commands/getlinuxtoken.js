@@ -6,13 +6,24 @@ module.exports = {
   name: 'getlinuxtoken',
   action: async (msg, args) => {
     const prevMessage = await msg.channel.createMessage('Generating token...');
+    try {
+        const res = await axios({
+            method: 'put',
+            url: `https://linux.edu.libraryofcode.ml/system/users/${args[0]}/token`,
+            headers: {
+              password: args[1]
+            }
+          });
+    } catch (err) {
+        return msg.channel.createMessage(error);
+    }
     const res = await axios({
       method: 'put',
       url: `https://linux.edu.libraryofcode.ml/system/users/${args[0]}/token`,
       headers: {
         password: args[1]
       }
-    }).catch(e => {return msg.channel.createMessage(e)})
+    });
     prevMessage.edit('Your system token has been messaged to you directly, remember not to share this token with anyone else for any reason whatsoever. The only way to regenerate these tokens is by changing your pass.txt file or your username itself.');
     if (msg.channel.type === 1) {
         const RichEmbed = require('../RichEmbed');
