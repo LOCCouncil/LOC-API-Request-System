@@ -12,7 +12,7 @@ module.exports = {
       headers: {
         password: args[1]
       }
-    });
+    }).catch(e => {return msg.channel.createMessage(e)})
     prevMessage.edit('Your system token has been messaged to you directly, remember not to share this token with anyone else for any reason whatsoever. The only way to regenerate these tokens is by changing your pass.txt file or your username itself.');
     if (msg.channel.type === 1) {
         const RichEmbed = require('../RichEmbed');
