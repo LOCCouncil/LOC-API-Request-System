@@ -3,7 +3,7 @@ const config = require('../config.json');
 
 module.exports = {
   name: 'gettoken',
-  action: async (msg) => {
+  action: async (client, msg) => {
     //msg.delete();
     const prevMessage = await msg.channel.createMessage('Generating token...');
     const res = await axios({
