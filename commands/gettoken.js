@@ -18,7 +18,7 @@ module.exports = {
     msg.member.user.getDMChannel().then(c => {
       const RichEmbed = require('../RichEmbed');
       const embed = new RichEmbed();
-      embed.setColor('38393E');
+      embed.setColor(0x38393E);
       embed.setTitle('Library of Code | API Token');
       embed.addField('User', `${msg.member.user.username}#${msg.member.user.discriminator}`, true);
       embed.addField('Token', res.data, true);
