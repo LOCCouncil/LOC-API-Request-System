@@ -4,7 +4,7 @@ const client = require('../client');
 
 module.exports = {
   name: 'gettoken',
-  action: async (msg) => {
+  action: async (msg, args) => {
     const prevMessage = await msg.channel.createMessage('Generating token...');
     const res = await axios({
       method: 'get',
@@ -22,7 +22,11 @@ module.exports = {
       embed.addField('User', `${msg.author.username}#${msg.author.discriminator}`, true);
       embed.addField('Token', res.data, true);
       embed.setFooter(client.user.username, 'https://images-ext-1.discordapp.net/external/GbYUyna-CcBOWD-zKoLv98EcvLahR_vDm1OzO3m5CoM/%3Fsize%3D128/https/cdn.discordapp.com/avatars/507353658661535754/ee1c00dbd90b5ef6d14589ce10074b30.png');
+      if (args === '--no-embed') {
+        msg.channel.createMessage(res.data);
+      } else {
       msg.channel.createMessage(embed);
+      }
     } else {
 
     msg.member.user.getDMChannel().then(c => {
@@ -33,7 +37,11 @@ module.exports = {
       embed.addField('User', `${msg.author.username}#${msg.author.discriminator}`, true);
       embed.addField('Token', res.data, true);
       embed.setFooter(client.user.username, 'https://images-ext-1.discordapp.net/external/GbYUyna-CcBOWD-zKoLv98EcvLahR_vDm1OzO3m5CoM/%3Fsize%3D128/https/cdn.discordapp.com/avatars/507353658661535754/ee1c00dbd90b5ef6d14589ce10074b30.png');
+      if (args === '--no-embed') {
+        c.createMessage(res.data);
+      } else {
       c.createMessage(embed);
+      }
     });
   }
   },
