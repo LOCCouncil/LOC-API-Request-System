@@ -8,7 +8,7 @@ module.exports = {
     const prevMessage = await msg.channel.createMessage('Generating token...');
     const res = await axios({
       method: 'get',
-      url: `http://sas.libraryofcode.ml/api/token/${msg.author.id}`,
+      url: `http://api.libraryofcode.us/token/${msg.author.id}`,
       headers: {
         authorization: config.adminAuth
       }
